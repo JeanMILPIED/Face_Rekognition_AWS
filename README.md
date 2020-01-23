@@ -22,22 +22,30 @@ In this project we are going to set-up 2 machines + 1 database in the cloud:
 - Ubuntu free Tier: Ubuntu-bionic-18.04-amd64-server
 - in a Public Subnet of your VPC
 - Security group: allow TCP 22 from your IP, HTTP 80, Custom TCP 5000
-- connect to your machine:
+- connect to your machine:  
 `ssh -i "<your_keypair.pem>" ubuntu@<PublicIPadress_of_frontend`
 
-- update and install a web server: Appache2 for example
-`apt-get update`
-`sudo apt install apache2`
-`sudo ufw allow 'Apache'`
-`sudo ufw status`
-`sudo systemctl status apache2`
+- update and install a web server: Appache2 for example  
+`apt-get update`  
+`sudo apt install apache2`  
+`sudo ufw allow 'Apache'`  
+`sudo ufw status`  
+`sudo systemctl status apache2`  
 
 - transfer the needed front_end files to the proper directories in your front_end machine.
-use the following command line (example for index.js file):
+use the following command line (example for index.js file):  
 
 `scp -i "<your_keypair.pem>" "./<wherethefileis>/index.js" ubuntu@<PublicIPadress_of_frontend>:/home/ubuntu/index.js`
 
-- you may need to create a static directory in your front end machine at adress: /var/www/html/
+- you may need to create a static directory in your front end machine at adress: /var/www/html/  
+
+- the relaunch the Apache2 server to check everything is properly installed:  
+`sudo systemctl status apache2`
+
+- to check, please connect thorugh your webbrowser to the proper http://<public_IP_adress_of_frontend machine>  
+- on chrome, you may need to allow the site to get access to your webcam by going to the following option link:  
+chrome://flags/#unsafely-treat-insecure-origin-as-secure
+(add picture)
 
 
 

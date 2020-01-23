@@ -117,5 +117,6 @@ to store the image files created by the webcam, we will use the S3 database form
 - connect to your frontend public IP adress
 - have fun!
 
+![alt text](https://github.com/JeanMILPIED/Face_Rekognition_AWS/blob/master/2020-01-23%20(2).png)
 
 

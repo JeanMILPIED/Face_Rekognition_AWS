@@ -97,5 +97,25 @@ region = us-east-1
 scp -i "<your_key.pem>" "<where the file is>/my_rek_app.py" ubuntu@<backend IP adress>:/home/ubuntu/my_rek_app.py  
 ```
 
+- then lauch the .py program
+```
+python3 my_rek_api.py  
+```
 
 ### database: S3 bucket instance
+to store the image files created by the webcam, we will use the S3 database format  
+- go to S3 service in AWS
+- create a bucket named 'image-for-reko'
+- keep its security open for this time
+
+### Then make the whole project work!
+#### some changes first
+- in the index.js file, change the IP adress to the Public IP of your backend machine
+- don't forget to update your credentials in the ~/.aws/ folder
+
+#### and let the magic happen
+- connect to your frontend public IP adress
+- have fun!
+
+
+

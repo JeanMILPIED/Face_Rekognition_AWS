@@ -75,7 +75,7 @@ the nano command allows you to modify the files
 ` mkdir ~/.aws  
   nano ~/.aws/credentials`  
 
-your credentials should look like this:  
+  - your credentials should look like this:  
         ```
         [default]   
         aws_access_key_id= ...   
@@ -91,5 +91,11 @@ your credentials should look like this:
 [default]    
 region = us-east-1   
 ```           
+
+- you can then transfer the .py file named my_rek_app.py to the home directory in the backend machine
+```
+scp -i "<your_key.pem>" "<where the file is>/my_rek_app.py" ubuntu@<backend IP adress>:/home/ubuntu/my_rek_app.py  
+```
+
 
 ### database: S3 bucket instance

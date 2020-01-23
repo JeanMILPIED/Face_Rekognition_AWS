@@ -62,7 +62,7 @@ use the following command line (example for index.js file):
 `conda create -n my_flask_env python=3.6` 
 `conda activate my_flask_env` 
 `pip install Flask`  
-`pip install flask_cors` 
+`pip install flask_cors`  
 `pip install boto3`  
 `pip install flask_cor`  
 
@@ -70,8 +70,7 @@ note: you may need to disconnect and reconnect to your EC2 inorder to get it pro
 
 - then you should strore your AWS credentials on the machine at the proper location:  
 the nano command allows you to modify the files
-` mkdir ~/.aws
-  ls  
+` mkdir ~/.aws  
   nano ~/.aws/credentials`  
 
 your credentials should look like this:  
@@ -83,8 +82,8 @@ your credentials should look like this:
 - then you should modify the configuration of your aws for the proper region
 `nano ~/.aws/config` 
 your region should look like this
-           [default]
-           region = us-east-1
+           ```[default]
+           region = us-east-1 ```  
            
            
 

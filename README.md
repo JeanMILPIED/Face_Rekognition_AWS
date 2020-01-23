@@ -44,11 +44,37 @@ use the following command line (example for index.js file):
 
 - to check, please connect thorugh your webbrowser to the proper http://<public_IP_adress_of_frontend machine>  
 - on chrome, you may need to allow the site to get access to your webcam by going to the following option link:  
-chrome://flags/#unsafely-treat-insecure-origin-as-secure
-(add picture)
+(chrome://flags/#unsafely-treat-insecure-origin-as-secure)  
+(add picture)  
+
 
 
 
 
 ### Machine2: Back end EC2 instance
+- Ubuntu free Tier: Ubuntu-bionic-18.04-amd64-server + a 20Go memory request
+- in a Public Subnet of your VPC
+- Security group: allow TCP 22 from your IP, Custom TCP 5000
+- connect to your machine:  
+`ssh -i "<your_keypair.pem>" ubuntu@<PublicIPadress_of_backend>`  
+
+- update and install Anaconda and create a virtual flask environment  
+`    1  sudo apt-get update  
+    2  wget https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh  
+    3  exit  
+    4  conda create -n my_flask_env python=3.6  
+    5  conda activate my_flask_env  
+    6  pip install Flask  
+    7  pip install flask_cors  
+    8  pip install boto3  
+    9  pip install flask_cor`  
+
+note: you may need to disconnect and reconnect to your EC2 inorder to get it properly work
+
+- then you should strore your AWS credentials on the machine at the proper location:  
+the nano command allows you to modify the files
+` mkdir ~/.aws
+  ls  
+  nano ~/.aws/credentials`
+
 ### database: S3 bucket instance

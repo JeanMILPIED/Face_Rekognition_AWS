@@ -42,7 +42,9 @@ use the following command line (example for index.js file):
 - the relaunch the Apache2 server to check everything is properly installed:  
 `sudo systemctl status apache2`
 
-- to check, please connect thorugh your webbrowser to the proper http://<public_IP_adress_of_frontend machine>  
+- to check, please connect thorugh your webbrowser to the proper http://<public_IP_adress_of_frontend machine>
+
+
 - on chrome, you may need to allow the site to get access to your webcam by going to the following option link:  
 (chrome://flags/#unsafely-treat-insecure-origin-as-secure)  
 (add picture)  
@@ -59,12 +61,12 @@ use the following command line (example for index.js file):
 `sudo apt-get update`  
 `wget https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh`  
 `exit`   
-`conda create -n my_flask_env python=3.6` 
-`conda activate my_flask_env` 
-`pip install Flask`  
-`pip install flask_cors`  
-`pip install boto3`  
-`pip install flask_cor`  
+`conda create -n my_flask_env python=3.6`   
+`conda activate my_flask_env`   
+`pip install Flask`   
+`pip install flask_cors`   
+`pip install boto3`   
+`pip install flask_cor`   
 
 note: you may need to disconnect and reconnect to your EC2 inorder to get it properly work
 
@@ -74,16 +76,21 @@ the nano command allows you to modify the files
   nano ~/.aws/credentials`  
 
 your credentials should look like this:  
+        ```
         [default]
         aws_access_key_id= ...  
         aws_secret_access_key= ...  
         aws_session_token= ...
+        ```
 
 - then you should modify the configuration of your aws for the proper region
-`nano ~/.aws/config` 
+`nano ~/.aws/config`  
+
 your region should look like this
-           ```[default]
-           region = us-east-1 ```  
+           ```
+           [default]    
+           region = us-east-1
+           ```  
            
            
 

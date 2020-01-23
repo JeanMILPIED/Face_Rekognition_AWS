@@ -48,9 +48,6 @@ use the following command line (example for index.js file):
 (add picture)  
 
 
-
-
-
 ### Machine2: Back end EC2 instance
 - Ubuntu free Tier: Ubuntu-bionic-18.04-amd64-server + a 20Go memory request
 - in a Public Subnet of your VPC
@@ -59,15 +56,15 @@ use the following command line (example for index.js file):
 `ssh -i "<your_keypair.pem>" ubuntu@<PublicIPadress_of_backend>`  
 
 - update and install Anaconda and create a virtual flask environment  
-`    1  sudo apt-get update  
-    2  wget https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh  
-    3  exit  
-    4  conda create -n my_flask_env python=3.6  
-    5  conda activate my_flask_env  
-    6  pip install Flask  
-    7  pip install flask_cors  
-    8  pip install boto3  
-    9  pip install flask_cor`  
+`sudo apt-get update`  
+`wget https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh`  
+`exit`   
+`conda create -n my_flask_env python=3.6` 
+`conda activate my_flask_env` 
+`pip install Flask`  
+`pip install flask_cors` 
+`pip install boto3`  
+`pip install flask_cor`  
 
 note: you may need to disconnect and reconnect to your EC2 inorder to get it properly work
 
@@ -75,6 +72,20 @@ note: you may need to disconnect and reconnect to your EC2 inorder to get it pro
 the nano command allows you to modify the files
 ` mkdir ~/.aws
   ls  
-  nano ~/.aws/credentials`
+  nano ~/.aws/credentials`  
+
+your credentials should look like this:  
+        [default]
+        aws_access_key_id= ...  
+        aws_secret_access_key= ...  
+        aws_session_token= ...
+
+- then you should modify the configuration of your aws for the proper region
+`nano ~/.aws/config` 
+your region should look like this
+           [default]
+           region = us-east-1
+           
+           
 
 ### database: S3 bucket instance

@@ -68,7 +68,7 @@ use the following command line (example for index.js file):
 `pip install boto3`   
 `pip install flask_cor`   
 
-note: you may need to disconnect and reconnect to your EC2 inorder to get it properly work
+      note: you may need to disconnect and reconnect to your EC2 inorder to get it properly work
 
 - then you should strore your AWS credentials on the machine at the proper location:  
 the nano command allows you to modify the files
@@ -77,21 +77,19 @@ the nano command allows you to modify the files
 
 your credentials should look like this:  
         ```
-        [default]
-        aws_access_key_id= ...  
-        aws_secret_access_key= ...  
-        aws_session_token= ...
+        [default]   
+        aws_access_key_id= ...   
+        aws_secret_access_key= ...   
+        aws_session_token= ...   
         ```
 
 - then you should modify the configuration of your aws for the proper region
 `nano ~/.aws/config`  
 
-your region should look like this
-           ```
-           [default]    
-           region = us-east-1
-           ```  
-           
-           
+  - your region should look like this
+```
+[default]    
+region = us-east-1   
+```           
 
 ### database: S3 bucket instance

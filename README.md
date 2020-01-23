@@ -47,7 +47,7 @@ use the following command line (example for index.js file):
 
 - on chrome, you may need to allow the site to get access to your webcam by going to the following option link:  
 (chrome://flags/#unsafely-treat-insecure-origin-as-secure)  
-(add picture)  
+![alt text] (https://github.com/JeanMILPIED/Face_Rekognition_AWS/blob/master/webcam-google.JPG) 
 
 
 ### Machine2: Back end EC2 instance
